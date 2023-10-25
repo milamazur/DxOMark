@@ -1,0 +1,263 @@
+﻿<UserControl x:Class="dxOMark_wpf.StartView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:dxOMark_wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="850" d:DesignWidth="1100" Margin="0,0,10,0">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="lblNewArticles" Content="LATEST ARTICLES" Margin="0,30,0,0"
+               FontWeight="Bold" FontSize="16" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <StackPanel x:Name="spArticles" Orientation="Horizontal" Grid.Column="1" 
+                    Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="3">
+            <Border Width="400" Height="300" Background="White" Margin="0,0,0,0" 
+                    VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10" 
+                                       RadiusY="10" 
+                                       Rect="0,0,400,300"/>
+                </Border.Clip>
+                <Grid>
+                    <Button x:Name="imgNewest" Click="imgNewest_Click" Background="{x:Null}" Cursor="Hand"
+                            Foreground="{x:Null}" BorderThickness="0,0,0,0" Padding="0,0,0,0">
+                        <Image Source="/Images/concertImg.jpg" Width="455" Height="305"/>
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border Name="Border" BorderThickness="0" Background="White">
+                                                <ContentPresenter x:Name="ContentSite" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" RecognizesAccessKey="True"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                    <StackPanel>
+                        <TextBlock x:Name="txtNewArticleFirst"
+                                 Background="Transparent"
+                                 Foreground="White"
+                                 FontWeight="Bold"
+                                 FontSize="16"
+                                 Margin="30,20,20,20"
+                                 TextWrapping="Wrap"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </StackPanel>
+        <StackPanel x:Name="spArticlesSecond" Orientation="Horizontal" Grid.Column="3" 
+                    Grid.Row="1" Grid.ColumnSpan="3" VerticalAlignment="Top" 
+                    HorizontalAlignment="Left">
+            <Border Width="400" Height="130" Background="White" Margin="10,0,0,0" 
+                    VerticalAlignment="Top" >
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10" 
+                                       RadiusY="10" 
+                                       Rect="0,0,400,130"/>
+                </Border.Clip>
+                <Grid>
+                    <Button x:Name="imgSecondNewest" Foreground="{x:Null}" Cursor="Hand"
+                            BorderThickness="0,0,0,0" Padding="0,0,0,0" Click="imgSecondNewest_Click_1">
+
+                        <Image Source="/Images/gps.png" Width="130" Height="140" Margin="0,0,270,0"/>
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border Name="Border" BorderThickness="0" Background="White">
+                                                <ContentPresenter x:Name="ContentSite" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" RecognizesAccessKey="True"/>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter TargetName="Border" Property="Background" Value="White"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                    <StackPanel>
+                        <TextBlock x:Name="txtNewArticleSecond"
+                                 Background="Transparent"
+                                 Text="Article"
+                                 Foreground="Black"
+                                 FontWeight="Bold"
+                                 FontSize="12"
+                                 Margin="150,20,50,20"
+                                 TextWrapping="Wrap"/>
+                    </StackPanel>
+                </Grid>
+
+            </Border>
+        </StackPanel>
+        <StackPanel x:Name="spArticlesThird" Orientation="Horizontal" Grid.Column="3" 
+                    Grid.Row="2" Grid.ColumnSpan="3" VerticalAlignment="Bottom"
+                    HorizontalAlignment="Left">
+            <Border Width="400" Height="130" Background="White" Margin="10,0,0,0" >
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10" 
+                                       RadiusY="10" 
+                                       Rect="0,0,400,130"/>
+                </Border.Clip>
+                <Grid>
+                    <Button x:Name="imgThirdNewest" Background="{x:Null}" Foreground="{x:Null}" Cursor="Hand"
+                            BorderThickness="0,0,0,0" Padding="0,0,0,0" Click="imgThirdNewest_Click">
+                        <Image Source="/Images/mate50Pro.png" Width="130" Height="140" Margin="0,0,270,0"/>
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border Name="Border" BorderThickness="0" Background="White">
+                                                <ContentPresenter x:Name="ContentSite" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" RecognizesAccessKey="True"/>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter TargetName="Border" Property="Background" Value="White"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                    <StackPanel>
+                        <TextBlock x:Name="txtNewArticleThird"
+                                 Background="Transparent"
+                                 Text="Article"
+                                 Foreground="Black"
+                                 FontWeight="Bold"
+                                 FontSize="12"
+                                 Margin="150,20,50,20"
+                                 TextWrapping="Wrap"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </StackPanel>
+        <TextBlock x:Name="txtNewArticle" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" 
+                   Grid.RowSpan="2" Margin="5,5,0,0" Visibility="Hidden" TextWrapping="Wrap"
+                   FontSize="14"/>
+        <Label x:Name="lblBest" Content="TOP SMARTPHONES" Margin="0,40,0,0"
+                    FontWeight="Bold" FontSize="16" Grid.Row="3" Grid.Column="1"/>
+        <StackPanel x:Name="spSmartphones" Orientation="Horizontal" Grid.Column="1" 
+                    Grid.Row="4" Grid.ColumnSpan="3" VerticalAlignment="Top" >
+            <Border Width="180" Height="180"
+                    ScrollViewer.VerticalScrollBarVisibility="Hidden" 
+                    HorizontalAlignment="Left"
+                    UseLayoutRounding="True"  >
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10" 
+                                       RadiusY="10" 
+                                       Rect="0,0,180,180"/>
+                </Border.Clip>
+                <Grid>
+                    <DataGrid x:Name="dgDataSmartphones" 
+                              MinRowHeight="30" 
+                              ItemsSource="{Binding devices}" 
+                              AutoGenerateColumns="False"                                
+                              Grid.Column="2" Grid.Row="0" Grid.RowSpan="4"  
+                              BorderBrush="{x:Null}" 
+                              BorderThickness="0,0,0,0"
+                              ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="SMARTPHONE" Binding="{Binding Name}" Width="130" />
+                            <DataGridTextColumn Header="SCORE" Binding="{Binding SmartphoneScore}" Width="100" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+
+            </Border>
+        </StackPanel>
+        <Label x:Name="lblBestCamera" Content="TOP CAMERAS" Margin="0,40,0,0"
+                    FontWeight="Bold" FontSize="16" Grid.Column="2" Grid.Row="3"/>
+        <StackPanel x:Name="spCameras" Orientation="Horizontal" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="3" VerticalAlignment="Top" >
+            <Border Width="180" Height="180"
+                    ScrollViewer.VerticalScrollBarVisibility="Hidden" 
+                    HorizontalAlignment="Left"
+                    UseLayoutRounding="True"  >
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10" 
+                                       RadiusY="10" 
+                                       Rect="0,0,180,180"/>
+                </Border.Clip>
+                <Grid>
+                    <DataGrid x:Name="dgDataCameras" 
+                              MinRowHeight="30" 
+                              ItemsSource="{Binding devices}" 
+                              AutoGenerateColumns="False"
+                              Grid.Column="2" Grid.Row="0" Grid.RowSpan="4"  
+                              BorderBrush="{x:Null}" BorderThickness="0,0,0,0"                                
+                              ScrollViewer.HorizontalScrollBarVisibility="Hidden" 
+                              ScrollViewer.VerticalScrollBarVisibility="Hidden" 
+                              AllowDrop="True" 
+                              GridLinesVisibility="Horizontal" 
+                              ColumnHeaderHeight="35" 
+                              HorizontalGridLinesBrush="#FFECECEC" 
+                              HorizontalAlignment="Center" 
+                              VerticalContentAlignment="Center">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="CAMERA" Binding="{Binding Name}" Width="130" />
+                            <DataGridTextColumn Header="SCORE" Binding="{Binding CameraScore}" Width="100"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+
+            </Border>
+        </StackPanel>
+        <Label x:Name="lblBestSpeaker" Content="TOP SPEAKERS" Margin="0,40,0,0"
+                    FontWeight="Bold" FontSize="16" Grid.Column="3" Grid.Row="3"/>
+        <StackPanel x:Name="spSpeakers" Orientation="Horizontal" Grid.Column="3" Grid.Row="4" 
+                    Grid.ColumnSpan="3" VerticalAlignment="Top" >
+            <Border Width="180" Height="180" 
+                    ScrollViewer.VerticalScrollBarVisibility="Hidden" 
+                    HorizontalAlignment="Left"
+                    UseLayoutRounding="True"  >
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10" 
+                                       RadiusY="10" 
+                                       Rect="0,0,180,180"/>
+                </Border.Clip>
+                <Grid>
+                    <DataGrid x:Name="dgDataSpeakers" MinRowHeight="30" ItemsSource="{Binding devices}" AutoGenerateColumns="False"
+                                Grid.Column="2" Grid.Row="0" Grid.RowSpan="4"  BorderBrush="{x:Null}" BorderThickness="0,0,0,0" 
+                                ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" 
+                                AllowDrop="True" GridLinesVisibility="Horizontal" ColumnHeaderHeight="35" 
+                                HorizontalGridLinesBrush="#FFECECEC" HorizontalAlignment="Center" VerticalContentAlignment="Center">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="SPEAKER" Binding="{Binding Name}" Width="135" />
+                            <DataGridTextColumn Header="SCORE" Binding="{Binding SpeakerScore}" Width="100"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+
+            </Border>
+        </StackPanel>
+
+
+
+
+    </Grid>
+</UserControl>

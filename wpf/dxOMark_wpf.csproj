@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\concertImg.jpg" />
+    <None Remove="Images\gps.png" />
+    <None Remove="Images\logoDxOMark.png" />
+    <None Remove="Images\mate50Pro.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\dal\dxOMark_dal.csproj" />
+    <ProjectReference Include="..\models\dxOMark_models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\concertImg.jpg" />
+    <Resource Include="Images\gps.png" />
+    <Resource Include="Images\logoDxOMark.png" />
+    <Resource Include="Images\mate50Pro.png" />
+  </ItemGroup>
+
+</Project>

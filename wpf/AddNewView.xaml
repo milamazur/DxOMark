@@ -1,0 +1,292 @@
+﻿<UserControl x:Class="dxOMark_wpf.AddNewView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:dxOMark_wpf"
+             mc:Ignorable="d"              
+             d:DesignHeight="850" d:DesignWidth="1100">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="280"/>
+            <ColumnDefinition  Width="50"/>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical">
+            <Menu Margin="40,40,0,0">
+                <MenuItem x:Name="menuAddArticles" 
+                          Header="ADD ARTICLE" 
+                          FontSize="16" 
+                          Margin="20,25,0,0"
+                          Cursor="Hand">
+                    <StackPanel  Margin="20">
+                        <Label Content="Title"/>
+                        <TextBox x:Name="txtAddTitle"
+                                 VerticalAlignment="Center"  
+                                 Margin="5" 
+                                 Background="Transparent" 
+                                 BorderThickness="0,0,0,1"/>
+                        <Label Content="Text"/>
+                        <TextBox x:Name="txtAddText"
+                                 VerticalAlignment="Center"  
+                                 Margin="5" 
+                                 Background="Transparent" 
+                                 BorderThickness="0,0,0,1"/>
+                        <Label Content="Device"/>
+                        <ComboBox x:Name="cmbChooseArticleDevice" Margin="5" />
+                        <Label Content="Category"/>
+                        <ComboBox x:Name="cmbChooseCategory" Margin="5" />
+                        <Button x:Name="btnAddArticle" Content="ADD ARTICLE" Margin="5" Click="btnAddArticle_Click"/>
+                    </StackPanel>
+                </MenuItem>
+                <MenuItem x:Name="menuAddBrands" 
+                          Header="ADD BRAND" 
+                          FontSize="16" 
+                          Margin="20,25,0,0"
+                          Cursor="Hand">
+                    <StackPanel Margin="20">
+                        <Label Content="Name"/>
+                        <TextBox x:Name="txtAddBrand"
+                                 VerticalAlignment="Center"  
+                                 Margin="5" 
+                                 Background="Transparent" 
+                                 BorderThickness="0,0,0,1"/>
+                        <Button x:Name="btnAddBrand" Content="ADD BRAND" Margin="5" Click="btnAddBrand_Click"/>
+                    </StackPanel>
+                </MenuItem>
+                <MenuItem x:Name="menuAddCategories" 
+                          Header="ADD CATEGORY" 
+                          FontSize="16" 
+                          Margin="20,25,0,0"
+                          Cursor="Hand">
+                    <StackPanel Margin="20">
+                        <Label Content="Name"/>
+                        <TextBox x:Name="txtAddCategory"
+                                 Background="Transparent"
+                                 VerticalAlignment="Center"  
+                                 Margin="5"
+                                 BorderThickness="0,0,0,1"/>
+                        <Button x:Name="btnAddCategory" Content="ADD CATEGORY" Margin="5" Click="btnAddCategory_Click"/>
+                    </StackPanel>
+                </MenuItem>
+                <MenuItem x:Name="menuAddDevices" 
+                          Header="ADD DEVICE" 
+                          FontSize="16" 
+                          Margin="20,25,50,0"
+                          Cursor="Hand">
+                    <StackPanel Margin="20">
+                        <Label Content="Name"/>
+                        <TextBox x:Name="txtAddName" 
+                                 Background="Transparent"                        
+                                 VerticalAlignment="Center" 
+                                 Grid.Row="0" Grid.Column="0" 
+                                 Margin="5"
+                                 BorderThickness="0,0,0,1"/>
+                        <Label Content="Launch Date"/>
+                        <DatePicker x:Name="dpAddLaunchDate" Background="White"
+                        VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" Margin="5" />
+                        <Label Content="Launch Price"/>
+                        <TextBox x:Name="txtAddLaunchPrice" 
+                                 Background="Transparent" 
+                                 BorderThickness="0,0,0,1"
+                                 VerticalAlignment="Center" 
+                                 Grid.Row="2" Grid.Column="0" 
+                                 Margin="5" />
+                        <Label Content="Image"/>
+                        <TextBox x:Name="txtAddImage" 
+                                 Background="Transparent" 
+                                 BorderThickness="0,0,0,1"
+                                 VerticalAlignment="Center" 
+                                 Grid.Row="2" Grid.Column="0" 
+                                 Margin="5" />
+                        <Label Content="Review"/>
+                        <TextBox x:Name="txtAddReview" 
+                                 Background="Transparent" 
+                                 BorderThickness="0,0,0,1"
+                                 VerticalAlignment="Center" 
+                                 Grid.Row="2" Grid.Column="0" 
+                                 Margin="5" />
+                        <Label Content="Brand"/>
+                        <ComboBox x:Name="cmbChooseBrand" SelectedValuePath="Id" DisplayMemberPath="Name" Grid.Row="3" Grid.Column="0" Margin="5" />
+                        <Button x:Name="btnAddDevice" Content="ADD DEVICE" Margin="5" Click="btnAddDevice_Click_1"/>
+                    </StackPanel>
+                </MenuItem>
+                <MenuItem x:Name="menuFunctionalities" 
+                          Header="ADD FUNCTIONALITY" 
+                          FontSize="16" 
+                          Margin="20,25,0,0"
+                          Cursor="Hand">
+                    <StackPanel Margin="20">
+                        <Label Content="Name"/>
+                        <TextBox x:Name="txtAddFunctionality" 
+                                 Background="Transparent"                                 
+                                 VerticalAlignment="Center"  
+                                 Margin="5" 
+                                 BorderThickness="0,0,0,1" />
+                        <Button x:Name="btnAddFunctionality" Content="ADD FUNCTIONALITY" Margin="5" Click="btnAddFunctionality_Click"/>
+                    </StackPanel>
+                </MenuItem>
+                <MenuItem x:Name="menuScores" 
+                          Header="ADD SCORE" 
+                          FontSize="16" 
+                          Margin="20,25,0,20"
+                          Cursor="Hand">
+                    <StackPanel Margin="20">
+                        <Label Content="Score"/>
+                        <TextBox x:Name="txtAddScore" 
+                                 Background="Transparent"                                 
+                                 VerticalAlignment="Center"  
+                                 Margin="5" 
+                                 BorderThickness="0,0,0,1" />
+                        <Label Content="Functionality"/>
+                        <ComboBox SelectedValuePath="Id" DisplayMemberPath="Name" x:Name="cmbChooseFunctionality" Margin="5" />
+                        <Label Content="Device"/>
+                        <ComboBox SelectedValuePath="Id" DisplayMemberPath="Name" x:Name="cmbChooseDevice" Margin="5" />
+                        <Button x:Name="btnAddScore" Content="ADD SCORE" Margin="5" Click="btnAddScore_Click"/>
+                    </StackPanel>
+                </MenuItem>
+            </Menu>
+            <Button x:Name="btnDelete" Content="Delete Category" Grid.Row="0" Grid.Column="0" 
+                Margin="40,190,0,0" Click="btnDelete_Click"/>
+            <Button x:Name="btnDeleteFunctionality" Content="Delete Functionality" Grid.Row="0" Grid.Column="0" 
+                Margin="40,15,0,0" Click="btnDeleteFunctionality_Click" />
+
+        </StackPanel>
+        <ScrollViewer Grid.Column="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="300"/>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="250"/>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="150"/>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="300"/>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="400"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="lblAddArticles" 
+                       Content="ARTICLES" 
+                       Grid.Row="0"
+                       FontSize="16"
+                       FontWeight="DemiBold"
+                       VerticalContentAlignment="Bottom"/>
+                <DataGrid x:Name="dgArticles" 
+                          AutoGenerateColumns="False" 
+                          ItemsSource="{Binding articles}" 
+                          Grid.Row="1"
+                          BorderBrush="Gray"
+                          Margin="0,0,50,0"
+                          SelectionUnit="FullRow"
+                          ScrollViewer.HorizontalScrollBarVisibility="Visible">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="id" Binding="{Binding Id}" Width="30"/>
+                        <DataGridTextColumn Header="title" Binding="{Binding Title}" Width="430"/>
+                        <DataGridTextColumn Header="upload date" Binding="{Binding UploadDate, StringFormat=dd/MM/yyyy}" Width="100"/>
+                        <DataGridTextColumn Header="category" Binding="{Binding Category}" Width="100"/>
+                        <DataGridTextColumn Header="device" Binding="{Binding Device}" Width="130"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Label x:Name="lblAddBrands" 
+                       Content="BRANDS" 
+                       Grid.Row="2"
+                       FontSize="16"
+                       FontWeight="DemiBold"
+                       VerticalContentAlignment="Bottom"/>
+                <DataGrid x:Name="dgBrands" 
+                          AutoGenerateColumns="False" 
+                          ItemsSource="{Binding brands}" 
+                          Grid.Row="3"
+                          BorderBrush="Gray"
+                          Margin="0,0,50,0">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="id" Binding="{Binding Id}" Width="30"/>
+                        <DataGridTextColumn Header="name" Binding="{Binding Name}" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Label x:Name="lblAddCategories" 
+                       Content="CATEGORIES" 
+                       Grid.Row="4"
+                       FontSize="16" 
+                       FontWeight="DemiBold"
+                       VerticalContentAlignment="Bottom"/>
+                <DataGrid x:Name="dgCategories" 
+                          AutoGenerateColumns="False" 
+                          ItemsSource="{Binding categories}" 
+                          Grid.Row="5" 
+                          BorderBrush="Gray"
+                          Margin="0,0,50,0">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="id" Binding="{Binding Id}" Width="30"/>
+                        <DataGridTextColumn Header="name" Binding="{Binding Name}" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Label x:Name="lblAddDevices" 
+                       Content="DEVICES" 
+                       Grid.Row="6" 
+                       FontSize="16"
+                       FontWeight="DemiBold"
+                       VerticalContentAlignment="Bottom"/>
+                <DataGrid x:Name="dgDevices" 
+                          AutoGenerateColumns="False" 
+                          ItemsSource="{Binding devices}" 
+                          Grid.Row="7"
+                          BorderBrush="Gray"
+                          Margin="0,0,50,0"
+                          ScrollViewer.HorizontalScrollBarVisibility="Visible">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="id" Binding="{Binding Id}" Width="30"/>
+                        <DataGridTextColumn Header="brand" Binding="{Binding Brand}" Width="80"/>
+                        <DataGridTextColumn Header="name" Binding="{Binding Name}" Width="180"/>
+                        <DataGridTextColumn Header="launch price" Binding="{Binding LaunchPrice, StringFormat=0.00}" Width="80"/>
+                        <DataGridTextColumn Header="launch date" Binding="{Binding LaunchDate, StringFormat=dd/MM/yyyy}" Width="100"/>
+                        <DataGridTextColumn Header="image" Binding="{Binding Image}" Width="800"/>
+                        <DataGridTextColumn Header="review" Binding="{Binding Review}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Label x:Name="lblAddFunctionalities" 
+                       Content="FUNCTIONALITIES" 
+                       Grid.Row="8" 
+                       FontWeight="DemiBold"                                 
+                       FontSize="16"
+                       VerticalContentAlignment="Bottom"/>
+                <DataGrid x:Name="dgFunctionalities" 
+                          AutoGenerateColumns="False" 
+                          ItemsSource="{Binding functionalities}" 
+                          Grid.Row="9" 
+                          BorderBrush="Gray"
+                          Margin="0,0,50,0">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="id" Binding="{Binding Id}" Width="30"/>
+                        <DataGridTextColumn Header="name" Binding="{Binding Name}" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Label x:Name="lblAddScores" 
+                       Content="SCORES" 
+                       Grid.Row="10" 
+                       FontWeight="DemiBold"                                 
+                       FontSize="16"
+                       VerticalContentAlignment="Bottom"/>
+                <DataGrid x:Name="dgScores" 
+                          AutoGenerateColumns="False" 
+                          ItemsSource="{Binding scores}" 
+                          Grid.Row="11" 
+                          BorderBrush="Gray"
+                          Margin="0,0,50,0">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="id" Binding="{Binding Id}" Width="30"/>
+                        <DataGridTextColumn Header="device" Binding="{Binding Device}" Width="180"/>
+                        <DataGridTextColumn Header="functionality" Binding="{Binding Functionality}" Width="180"/>
+                        <DataGridTextColumn Header="score" Binding="{Binding Score}" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </ScrollViewer>
+        
+        
+ 
+    </Grid>
+</UserControl>
